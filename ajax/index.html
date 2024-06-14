@@ -4,29 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
-    <script>
-        //이벤트method-function만 대상으로 받음//
-        //ready / document 전용
-        // click,  hover / 아무태그나 사용가능
-        //change, focus, submit / input태그들만 가능-폼태그
-        //scroll / 쓸수있는 window, document
+    <script
+  src="https://code.jquery.com/jquery-2.2.4.min.js"
+  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+  crossorigin="anonymous"></script> 
+  <script>
 
-        $(document).ready(function(){
-            $("#hd").load("/ajax/src/hd.html");
-            $("#main").load("./src/content.html");
-            $("#ft").load("src/ft.html");
-            $("#test").load("src/test.html")
-
+    $(document).ready(function(){     
+        // API : 데이터를 화면에 적용 구현 (Application Programming Interface)
+        // 소프트웨어 애플리케이션 간의 상호작용
+        // 웹 서버와 클라이언트 간의 데이터 교환을 가능하게 합니다. 
+        // 예를 들어, REST API, GraphQL API 등이 있습니다.
+        $.ajax({
+            url: "/ajax/json/data.json",
+            type:"GET",
+            dataType : "json",
+            success :function(data){
+                console.log(data);
+                $("#target p").html(data.text)
+            },
+            error : function(x,b,c){
+                console.log(x,b,c)
+            }
         })
-    </script>
+    })
+  </script>
 </head>
 <body>
     <div class="wrap">
-        <header id="hd"></header>
-        <section id="main"></section>
-        <footer id="ft"></footer>
-        <section id="test"></section>
+        <div id="target">
+            <h2>API호출</h2>
+          <p>여기에 비동기로 데이터를 끌고와서 출력하게됨</p>
+        </div>
+      
     </div>
 </body>
 </html>
