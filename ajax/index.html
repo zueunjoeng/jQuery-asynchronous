@@ -13,15 +13,17 @@
         //scroll / 쓸수있는 window, document
 
         $(document).ready(function(){
-            $(".wrap").load("/ajax/src/hd.html");
-            $(".wrap").load("./src/hd.html");
-            $(".wrap").load("src/hd.html");
+            $("#hd").load("/ajax/src/hd.html");
+            $("#main").load("./src/content.html");
+            $("#ft").load("src/ft.html");
         })
     </script>
 </head>
 <body>
     <div class="wrap">
- 
+        <header id="hd"></header>
+        <section id="main"></section>
+        <footer id="ft"></footer>
     </div>
 </body>
 </html>
