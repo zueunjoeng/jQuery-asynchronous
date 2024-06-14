@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script>
+        //이벤트method-function만 대상으로 받음//
+        //ready / document 전용
+        // click,  hover / 아무태그나 사용가능
+        //change, focus, submit / input태그들만 가능-폼태그
+        //scroll / 쓸수있는 window, document
+
+        $(document).ready(function(){
+            $(".wrap").load("/ajax/src/hd.html");
+            $(".wrap").load("./src/hd.html");
+            $(".wrap").load("src/hd.html");
+        })
+    </script>
+</head>
+<body>
+    <div class="wrap">
+ 
+    </div>
+</body>
+</html>
