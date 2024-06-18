@@ -1,0 +1,7 @@
+{
+    "links": [
+        { "url": "https://www.example.com", "text": "Example.com 방문하기" },
+        { "url": "https://www.google.com", "text": "Google 검색하기" },
+        { "url": "https://www.openai.com", "text": "OpenAI 사이트 방문하기" }
+    ]
+}
